@@ -75,6 +75,8 @@ window.PUBLIC = (function() {
 
         //remove the link when done
         document.body.removeChild(link);
+
+        document.querySelector("#download .instructions").innerText = "If the button didn't work, try right clicking and selecting \"save image\". Please share this website.";
     }
 
     function statusChangeCallback(response) {
