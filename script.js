@@ -80,7 +80,8 @@
     function testAPI() {
         FB.api("/me/picture", function(response) {
             loginDone();
-            document.getElementById("download").style.backgroundImage = "url(" + response.url + ")";
+            console.log(response);
+            document.getElementById("download").style.backgroundImage = "url(" + response.data.url + ")";
         });
     }
 }());
