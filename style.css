@@ -144,16 +144,15 @@ body {
     }
 }
 
-#photo-box {
-    height: 192px;
-    width: 320px;
-    border-radius: 2px;
+#photo {
+    height: 100%;
+    width: 100%;
     background-color: #fff;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    padding: 67px 41px 0 0;
+    left: 0;
+    text-align: center;
 }
 
 #download {
@@ -180,10 +179,12 @@ body {
 
 #download .why {
     font-size: 2em;
+    font-weight: 300;
 }
 
 #download .right {
-    padding: 0 100px 0 50px;
+    padding: 0px 100px 0 50px;
+    position: relative;
 }
 
 #download canvas {

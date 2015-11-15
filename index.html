@@ -18,19 +18,17 @@
             </svg>
         </div>
     </div>
-    <div id="photo" class="on">
-        <div id="photo-box">
-            <span>Login to retrieve your Facebook profile picture</span>
-            <fb:login-button scope="public_profile,email" onlogin="PUBLIC.checkLoginState();">
-            </fb:login-button>
-        </div>
-    </div>
     <div id="download">
         <div class="left">
             <p class="instructions">Download the image and set it as profile picture on Facebook or anywhere you want.</p>
             <div class="why">Show support for the 2000+ dead people on the Syrian war (1000+ were civils) and all the refugees that had to leave everything behind.</div>
         </div>
         <div class="right">
+            <div id="photo" class="on">
+                <span>Login to retrieve your Facebook profile picture</span>
+                <fb:login-button scope="public_profile,email" onlogin="PUBLIC.checkLoginState();">
+                </fb:login-button>
+            </div>
             <canvas height="200" width="200" id="generated-image"></canvas>
             <button class="download-button">Download image</button>
         </div>
