@@ -10,6 +10,10 @@
         document.getElementById("photo").classList.remove("on");
     }
 
+    function generateImage(url) {
+
+    }
+
     function statusChangeCallback(response) {
         // The response object is returned with a status field that lets the
         // app know the current login status of the person.
@@ -78,7 +82,7 @@
     // Here we run a very simple test of the Graph API after login is
     // successful.  See statusChangeCallback() for when this call is made.
     function testAPI() {
-        FB.api("/me/picture", function(response) {
+        FB.api("/me/picture?type=large", function(response) {
             photoSelected();
             console.log(response);
             document.getElementById("download").style.backgroundImage = "url(" + response.data.url + ")";
