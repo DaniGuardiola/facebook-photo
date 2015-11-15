@@ -13,6 +13,10 @@ body {
     font-family: "Roboto", Verdana;
 }
 
+body {
+    background-image: url(bg.jpeg);
+}
+
 .loader {
     position: absolute;
     top: 50%;
