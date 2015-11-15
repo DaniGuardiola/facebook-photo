@@ -6,8 +6,8 @@
         document.getElementById("loader").classList.remove("on");
     }
 
-    function loginDone() {
-        document.getElementById("loader").classList.remove("on");
+    function photoSelected() {
+        document.getElementById("photo").classList.remove("on");
     }
 
     function statusChangeCallback(response) {
@@ -79,7 +79,7 @@
     // successful.  See statusChangeCallback() for when this call is made.
     function testAPI() {
         FB.api("/me/picture", function(response) {
-            loginDone();
+            photoSelected();
             console.log(response);
             document.getElementById("download").style.backgroundImage = "url(" + response.data.url + ")";
         });
