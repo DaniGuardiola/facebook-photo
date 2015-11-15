@@ -1,5 +1,5 @@
 /* global FB */
-(function() {
+var PUBLIC = (function() {
     "use strict";
 
     function init() {
@@ -98,5 +98,9 @@
             photoSelected();
             generateImage(response.data.url);
         });
+    }
+
+    return {
+        checkLoginState: checkLoginState
     }
 }());
