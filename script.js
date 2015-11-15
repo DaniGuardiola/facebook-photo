@@ -31,7 +31,7 @@ window.PUBLIC = (function() {
             var canvas = document.getElementById("generated-image");
             var ctx = canvas.getContext("2d");
             var img = new Image();
-            img.src = "data:image/png;base64," + base64;
+            img.src = base64;
             img.addEventListener("load", function() {
                 ctx.drawImage(img, 0, 0);
                 var flag = new Image();
