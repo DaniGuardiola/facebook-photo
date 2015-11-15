@@ -8,6 +8,7 @@ var PUBLIC = (function() {
 
     function photoSelected() {
         document.getElementById("photo").classList.remove("on");
+        document.querySelector("#download .instructions").innerText = "Download the image and set it as profile picture on Facebook or anywhere you want."
     }
 
     function generateImage(url) {

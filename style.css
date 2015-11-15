@@ -205,3 +205,10 @@ body {
     color: white;
     font-size: 20px;
 }
+
+#photo span {
+    font-size: 25px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 27px;
+}
