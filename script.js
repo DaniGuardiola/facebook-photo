@@ -4,6 +4,7 @@ var PUBLIC = (function() {
 
     function init() {
         document.getElementById("loader").classList.remove("on");
+        document.querySelector("#download .download-button").addEventListener("click", download);
     }
 
     function photoSelected() {
@@ -26,6 +27,18 @@ var PUBLIC = (function() {
             }, false);
         }, false);
     }
+
+    function download() {
+        var canvas = document.getElementById("generated-image");
+        var dt = canvas.toDataURL("image/png");
+        /* Change MIME type to trick the browser to downlaod the file instead of displaying it */
+        dt = dt.replace(/^data:image\/[^;]*/, "data:application/octet-stream");
+
+        /* In addition to <a>'s "download" attribute, you can define HTTP-style headers */
+        dt = dt.replace(/^data:application\/octet-stream/, "data:application/octet-stream;headers=Content-Disposition%3A%20attachment%3B%20filename=Canvas.png");
+
+        this.href = dt;
+    };
 
     function statusChangeCallback(response) {
         // The response object is returned with a status field that lets the
