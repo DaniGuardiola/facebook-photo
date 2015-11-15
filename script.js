@@ -39,9 +39,19 @@ window.PUBLIC = (function() {
                 flag.addEventListener("load", function() {
                     ctx.globalAlpha = 0.4;
                     ctx.drawImage(flag, 0, 0);
+                    watermark();
                 }, false);
             }, false);
         });
+    }
+
+    function watermark() {
+        var canvas = document.getElementById("generated-image");
+        var ctx = canvas.getContext("2d");
+        ctx.globalAlpha = 1;
+        ctx.font = "18px roboto";
+        ctx.fillStyle = "#fff";
+        ctx.fillText("syria.daniguardiola.me", 10, 190);
     }
 
     function download() {
@@ -53,7 +63,18 @@ window.PUBLIC = (function() {
         /* In addition to <a>'s "download" attribute, you can define HTTP-style headers */
         dt = dt.replace(/^data:application\/octet-stream/, "data:application/octet-stream;headers=Content-Disposition%3A%20attachment%3B%20filename=Canvas.png");
 
-        this.href = dt;
+        var link = document.createElement("a");
+        link.href = dt;
+        link.download = "image.png";
+
+        //Firefox requires the link to be in the body
+        document.body.appendChild(link);
+
+        //simulate click
+        link.click();
+
+        //remove the link when done
+        document.body.removeChild(link);
     }
 
     function statusChangeCallback(response) {
