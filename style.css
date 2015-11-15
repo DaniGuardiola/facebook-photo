@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 html,
 body {
     background-color: #eee;
@@ -6,6 +10,7 @@ body {
     margin: 0;
     padding: 0;
     border: 0;
+    font-family: "Roboto", Verdana;
 }
 
 .loader {
@@ -152,6 +157,50 @@ body {
 }
 
 #download {
-    height: 100%;
-    width: 100%;
+    margin: 0 32px;
+    top: 50%;
+    position: relative;
+    padding: 40px 0;
+    transform: translate(0, -50%);
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+#download .left {
+    padding: 32px;
+}
+
+#download .instructions {
+    font-size: 3em;
+    margin: 0 0 24px 0;
+}
+
+#download .why {
+    font-size: 2em;
+}
+
+#download .right {
+    padding: 0 100px 0 50px;
+}
+
+#download canvas {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#download .download-button {
+    margin-left: auto;
+    margin-right: auto;
+    width: 180px;
+    height: 50px;
+    margin-top: 16px;
+    display: blocK;
+    border: none;
+    background-color: #F44336;
+    color: white;
+    font-size: 20px;
 }
