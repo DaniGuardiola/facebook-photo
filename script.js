@@ -6,12 +6,15 @@
         document.getElementById("loader").classList.remove("on");
     }
 
+    function loginDone() {
+        document.getElementById("loader").classList.remove("on");
+    }
+
     function statusChangeCallback(response) {
         // The response object is returned with a status field that lets the
         // app know the current login status of the person.
         // Full docs on the response object can be found in the documentation
         // for FB.getLoginStatus().
-        init();
         if (response.status === "connected") {
             // Logged into your app and Facebook.
             testAPI();
@@ -25,6 +28,7 @@
             document.getElementById("login-status").innerHTML = "Please log " +
                 "into Facebook.";
         }
+        init();
     }
 
     // This function is called when someone finishes with the Login
@@ -74,9 +78,9 @@
     // Here we run a very simple test of the Graph API after login is
     // successful.  See statusChangeCallback() for when this call is made.
     function testAPI() {
-        FB.api("/me", function(response) {
-            document.getElementById("login-status").innerHTML =
-                "Thanks for logging in, " + response.name + "!";
+        FB.api("/me/picture", function(response) {
+            loginDone();
+            document.getElementById("download").style.backgroundImage = "url(" + response.url + ")";
         });
     }
 }());
